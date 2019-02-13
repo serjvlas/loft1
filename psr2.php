@@ -6,5 +6,5 @@ function show_something()
     return 'SOMETHING';
 }
 
-if (1==1)
+if (1 == 1)
     echo 'hi';
