@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 13.02.2019
- * Time: 22:01
- */
+const TESTCONSTANTA = 'asd';
+$user_name = "Igor";
+function show_something()
+{
+    return 'SOMETHING';
+}
+
+if (1==1)
+    echo 'hi';
