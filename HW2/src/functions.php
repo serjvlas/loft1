@@ -6,7 +6,7 @@ function task1($stringArr, $glue)
         echo "<p>$string</p>";
     }
     if ($glue == true) {
-        echo implode(',', $stringArr);
+        return implode(',', $stringArr);
     }
 }
 task1($stringArr, true);
