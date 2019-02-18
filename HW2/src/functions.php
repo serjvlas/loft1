@@ -10,3 +10,20 @@ function task1($stringArr, $glue)
     }
 }
 task1($stringArr, true);
+
+function task3 ($a,$b)
+{
+    if (!(($a = (int)$a) > 0) || !(($b = (int)$b) > 0)) {
+        die ("ОШИБКА! Функция принимает только  целіе числа");
+    }
+    echo '<table border ="1">';
+    for ($i = 1; $i <= $a; $i++) {
+        echo '<tr>';
+        for ($x = 1; $x <= $b; $x++) {
+            echo '<td>' . $i * $x . '</td>';
+        }
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+task3(2,3);
