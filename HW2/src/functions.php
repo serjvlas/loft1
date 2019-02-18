@@ -1,13 +1,12 @@
 <?php
 $stringArr = [1, 2, 3, 4, 5];
-function task1 ($stringArr, $var) {
-    foreach ($stringArr as $value) {
-        echo "<p>$value</p>";
-        if ($var == true) {
-           $var = implode($stringArr);
-           return $var;
-        }
+function task1($stringArr, $glue)
+{
+    foreach ($stringArr as $string) {
+        echo "<p>$string</p>";
+    }
+    if ($glue == true) {
+        echo implode(',', $stringArr);
     }
 }
-task1($stringArr, null);
-task1($stringArr, 5);
+task1($stringArr, true);
