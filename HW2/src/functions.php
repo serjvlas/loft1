@@ -99,6 +99,6 @@ function task5 () {
 
 function task6 () {
     $test = 'Hello again!';
-    //file_put_contents('test.txt', $test);
+    file_put_contents('test.txt', $test);
     echo file_get_contents('test.txt');
 }
