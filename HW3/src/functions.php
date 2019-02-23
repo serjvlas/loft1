@@ -29,7 +29,6 @@ function task1()
     echo 'Delivery Notes: ' . $delNotes . '<br>';
 }
 
-//task1 ();
 function task2()
 {
     $employers = ["Dima", "Misha", "Tanya"];
@@ -53,8 +52,6 @@ function task2()
     }
 }
 
-//task2();
-
 function task3()
 {
     $randArr = [];
@@ -75,4 +72,11 @@ function task3()
     echo $sum;
 }
 
-task3();
+function task4()
+{
+    $wikiUrl = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
+    $wikiCont = file_get_contents($wikiUrl);
+    $wikiContData = json_decode($wikiCont, true);
+    echo "Tilte is " . $wikiContData['query']['pages']['15580374']['title'] . "<br>";
+    echo "Page ID is " . $wikiContData['query']['pages']['15580374']['pageid'];
+}
