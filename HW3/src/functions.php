@@ -13,7 +13,7 @@ function task1()
         echo $address->Zip . '<br>';
         echo $address->Country . '<br>' . '<pre></pre>';
     }
-      echo '<br>';
+    echo '<br>';
 
     foreach ($xml->Items->Item as $items) {
         $atrib = $items[PartNumber] . '<br>';
@@ -26,17 +26,18 @@ function task1()
         echo '<br>';
     }
     $delNotes = $xml->DeliveryNotes;
-    echo 'Delivery Notes: ' .  $delNotes . '<br>';
+    echo 'Delivery Notes: ' . $delNotes . '<br>';
 }
+
 //task1 ();
 function task2()
 {
-    $employers = ["Dima","Misha","Tanya"];
+    $employers = ["Dima", "Misha", "Tanya"];
     $json = json_encode($employers);
     file_put_contents("output.json", $json);
     if ((rand(1, 2)) === 1) {
         $jsonDecode = json_decode($json);
-        $replaceArr = ["Tanya","Masha", "Sveta"];
+        $replaceArr = ["Tanya", "Masha", "Sveta"];
         $newJson = array_replace($jsonDecode, $replaceArr);
         $newJson = json_encode($newJson);
         file_put_contents("output2.json", $newJson);
@@ -51,8 +52,27 @@ function task2()
         echo $diff . "<br>";
     }
 }
+
 //task2();
 
+function task3()
+{
+    $randArr = [];
+    for ($i = 0; $i < 51; $i++) {
+        $randArr[] = mt_rand(1, 100);
+    }
+    $csvFile = fopen('file.csv', 'w');
+    fputcsv($csvFile, $randArr);
+    fclose($csvFile);
+    $openCsv = file_get_contents('file.csv');
+    $newCSVarr = str_getcsv($openCsv, ",");
+    $sum = 0;
+    foreach ($newCSVarr as $value) {
+        if ($value % 2 != 1) {
+            $sum = $sum += $value;
+        }
+    }
+    echo $sum;
+}
 
-
-//task2JSON ($employers);
+task3();
